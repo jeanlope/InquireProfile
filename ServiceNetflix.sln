@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31019.35
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServiceNetflix", "InquireProfile\ServiceNetflix.csproj", "{9EA3D6F7-F16E-46CD-B2F1-922BFD3DF15F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServiceNetflix", "ServiceNetflix\ServiceNetflix.csproj", "{9EA3D6F7-F16E-46CD-B2F1-922BFD3DF15F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
