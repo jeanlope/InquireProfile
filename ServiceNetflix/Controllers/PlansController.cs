@@ -11,28 +11,22 @@ namespace ServiceNetflix.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ProfileController : ControllerBase
+    public class PlansController : ControllerBase
     {
         private readonly AppDbContext context;
 
-        public ProfileController(AppDbContext context)
+        public PlansController(AppDbContext context)
         {
             this.context = context;
         }
 
-        // GET: PerfilController
+        // GET: PlansController
         [HttpGet]
         public IEnumerable<Perfiles> Get()
         {
             return context.Perfiles.ToList();
         }
 
-        // GET: PerfilController
-        [HttpGet("{id}")]
-        public Perfiles Get(long id)
-        {
-            var perfiles = context.Perfiles.FirstOrDefault(p => p.id_perfil == id);
-            return perfiles;
-        }
+       
     }
 }

@@ -11,16 +11,16 @@ namespace ServiceNetflix.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ProfileController : ControllerBase
+    public class FavoriteController : ControllerBase
     {
         private readonly AppDbContext context;
 
-        public ProfileController(AppDbContext context)
+        public FavoriteController(AppDbContext context)
         {
             this.context = context;
         }
 
-        // GET: PerfilController
+        // GET: FavoriteController 
         [HttpGet]
         public IEnumerable<Perfiles> Get()
         {
