@@ -1,11 +1,11 @@
-﻿using InquireProfile.Contexts;
-using InquireProfile.Entities;
+﻿using ServiceNetflix.Context;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using ServiceNetflix.Models;
 
 namespace ServiceNetflix.Controllers
 {
@@ -13,26 +13,22 @@ namespace ServiceNetflix.Controllers
     [ApiController]
     public class FavoriteController : ControllerBase
     {
-        private readonly AppDbContext context;
+        private readonly NetflixDbContext context;
 
-        public FavoriteController(AppDbContext context)
+        public FavoriteController(NetflixDbContext context)
         {
             this.context = context;
         }
-
+        /// <summary>
+        /// Obtener favoritos por perfil
+        /// </summary>
         // GET: FavoriteController 
         [HttpGet]
-        public IEnumerable<Perfiles> Get()
+        public IEnumerable<PerfilFavorito> Get()
         {
-            return context.Perfiles.ToList();
+            return context.PerfilFavoritos.ToList();
         }
 
-        // GET: PerfilController
-        [HttpGet("{id}")]
-        public Perfiles Get(long id)
-        {
-            var perfiles = context.Perfiles.FirstOrDefault(p => p.id_perfil == id);
-            return perfiles;
-        }
+        
     }
 }
