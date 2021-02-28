@@ -22,6 +22,14 @@ namespace ServiceNetflix.Mapper
 
             CreateMap<ParametrosValor, ParametroValorDTO>().ReverseMap();
 
+            CreateMap<PerfilFavorito, PerfilFavoritoDTO>().ReverseMap();
+
+            CreateMap<ContenidosMultimedium, ContenidoMultimediaDTO>().ReverseMap();
+
+            CreateMap<Video, VideoDTO>().ReverseMap();
+
+            CreateMap<TiposContenidoMultimedium, TiposContenidoMultimediaDTO>().ReverseMap();
+
         }
     }
 }

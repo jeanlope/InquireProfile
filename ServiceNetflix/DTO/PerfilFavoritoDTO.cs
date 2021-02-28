@@ -7,7 +7,6 @@ namespace ServiceNetflix.DTO
     {
         public int IdPerfilfavorito { get; set; }
         public int? IdPerfil { get; set; }
-        public int? IdContenidoMultimedia { get; set; }
-
+        public virtual ContenidoMultimediaDTO ContenidoMultimedia { get; set; }
     }
 }

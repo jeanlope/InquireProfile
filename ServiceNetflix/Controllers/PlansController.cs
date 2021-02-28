@@ -9,10 +9,15 @@ using ServiceNetflix.Models;
 using AutoMapper;
 using ServiceNetflix.DTO;
 
+
 namespace ServiceNetflix.Controllers
 {
+    
+
     [Route("api/[controller]")]
     [ApiController]
+
+
     public class PlansController : ControllerBase
     {
         private readonly NetflixDbContext context;
@@ -40,34 +45,16 @@ namespace ServiceNetflix.Controllers
                 var parametrosValors = context.ParametrosValors.FirstOrDefault(p => p.ParamValueId == pais.TipoMoneda);
 
                 var paisDTO = _mapper.Map<PaiseDTO>(pais);
-                var planDTO = _mapper.Map<PlaneDTO>(plane);
                 var parametroValorDTO = _mapper.Map<ParametroValorDTO>(parametrosValors);
+                var planDTO = _mapper.Map<PlaneDTO>(plane);
 
-                //paisDTO.ParametroValor = parametroValorDTO;
                 paisDTO.Moneda = parametroValorDTO;
                 planDTO.Paise = paisDTO;
                 planesDTO.Add(planDTO);
 
             }
 
-
-
-            //var planesDTO = _mapper.Map<List<PlaneDTO>>(planes);
-
             return planesDTO;
         }
-
-        /// <summary>
-        /// Obtener plan por pais
-        /// </summary>
-        // GET: PerfilController
-        //[HttpGet("{codePais}")]
-        //public PlaneDTO Get(string codePais)
-        //{
-        //    var plan = context.Planes.FirstOrDefault(p => p.IdPaisNavigation.Siglas==codePais);
-        //    var planDtO = _mapper.Map<PlaneDTO>(plan);
-        //    return planDtO;
-        //}
-
     }
 }
